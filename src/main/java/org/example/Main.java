@@ -15,7 +15,18 @@ public class Main {
             System.out.println("5. Exit");
             System.out.print("Enter your choice (1-5): ");
 
-            int choice = sc.nextInt();
+//            int choice = sc.nextInt();
+//            double x, b;
+
+            int choice;
+            try {
+                choice = sc.nextInt();
+            } catch (java.util.InputMismatchException e) {
+                System.out.println("Error: Invalid input. Please enter a number.");
+                sc.next(); // IMPORTANT: This clears the bad input from the scanner.
+                continue;  // Skip the rest of the loop and show the menu again.
+            }
+
             double x, b;
 
             switch (choice){
