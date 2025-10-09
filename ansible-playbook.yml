@@ -35,7 +35,7 @@
         state: started
         tty: yes          # Allocate a pseudo-TTY
         interactive: yes  # Keep STDIN open
-        detach: no
+        detach: yes
       become: yes
 
 
