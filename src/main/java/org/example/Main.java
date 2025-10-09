@@ -6,6 +6,9 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
+        System.out.println("Calculator app is ready. Press Enter to continue...");
+        sc.nextLine();
+
         while (true){
             System.out.println("Scientific Calculator Menu");
             System.out.println("1. Square Root (√x)");
