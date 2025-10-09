@@ -66,9 +66,11 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 echo "3. Building Docker image: ${env.DOCKER_HUB_USERNAME}/${env.IMAGE_NAME}:${env.IMAGE_TAG}"
-                sh "docker build -t ${env.DOCKER_HUB_USERNAME}/${env.IMAGE_NAME}:${env.IMAGE_TAG} -f Dockerfile ."
+                // Add --network=host so Maven inside the container can download dependencies
+                sh "docker build --network=host -t ${env.DOCKER_HUB_USERNAME}/${env.IMAGE_NAME}:${env.IMAGE_TAG} -f Dockerfile ."
             }
         }
+
 
         // Stage 4: Docker Push
         stage('Push to Docker Hub') {
