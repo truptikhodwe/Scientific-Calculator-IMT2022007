@@ -52,7 +52,7 @@ pipeline {
                 // CRITICAL FIX: Explicitly set tool environment variables for the shell session (Required for stability)
                 script {
                     def mavenHome = tool 'Bundled (Maven 3)'
-                    def javaHome = tool 'Java_21_Home'
+                    def javaHome = tool 'Java_17_Home'
 
                     withEnv(["MAVEN_HOME=${mavenHome}", "JAVA_HOME=${javaHome}"]) {
                         // mvn clean install runs compilation and test cases
