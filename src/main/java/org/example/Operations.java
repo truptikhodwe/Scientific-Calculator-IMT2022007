@@ -13,7 +13,6 @@ public class Operations {
         if (x < 0){
             throw new IllegalArgumentException("x must be >= 0");
         }
-
         if (x == 0)   return 1;
         return x * factorial(x - 1);
     }
