@@ -12,6 +12,7 @@ pipeline {
         maven 'Bundled (Maven 3)'
     }
 
+
     // 2. Environment: Define variables used throughout the pipeline.
     environment {
         DOCKER_HUB_USERNAME = 'trupti1812'
@@ -88,6 +89,15 @@ pipeline {
                 }
             }
         }
+
+//         stage('Deploy to Server') {
+//             steps {
+//                 echo '5. Deploying application using Ansible...'
+//                 sh """
+//                     ansible-playbook -i inventory.ini ansible-playbook.yml
+//                 """
+//             }
+//         }
     }
 
     // Send email about pipeline success/failure
