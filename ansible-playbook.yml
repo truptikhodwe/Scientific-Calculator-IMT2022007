@@ -14,13 +14,13 @@
         state: started
       become: false
 
-#    - name: Stop and remove existing container (if it exists)
-#      community.docker.docker_container:
-#        name: "{{ container_name }}"
-#        state: absent
-#        force_kill: yes
-#      ignore_errors: yes
-#      become: false
+    - name: Stop and remove existing container (if it exists)
+      community.docker.docker_container:
+        name: "{{ container_name }}"
+        state: absent
+        force_kill: yes
+      ignore_errors: yes
+      become: false
 
     - name: Pull the latest Docker image from Docker Hub
       community.docker.docker_image:
