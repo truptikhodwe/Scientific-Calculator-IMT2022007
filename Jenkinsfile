@@ -88,6 +88,15 @@ pipeline {
                 }
             }
         }
+
+        stage('Deploy to Server') {
+            steps {
+                echo '5. Deploying application using Ansible...'
+                sh """
+                    ansible-playbook -i inventory.ini ansible-playbook.yml
+                """
+            }
+        }
     }
 
     // Send email about pipeline success/failure
@@ -111,3 +120,6 @@ pipeline {
         }
     }
 }
+
+
+
